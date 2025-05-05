@@ -3,9 +3,7 @@ package main.models;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import jakarta.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -15,12 +13,14 @@ import java.util.List;
 public class Show extends BaseModel {
      @ManyToOne
      private Movie movie;
+
      private Date startTime;
      private Date endTime;
 
      @ManyToOne
      private Auditorium auditorium;
 
-     @ManyToMany
+     @ElementCollection
+     @Enumerated(EnumType.ORDINAL)
      private List<Feature> showFeatures;
 }

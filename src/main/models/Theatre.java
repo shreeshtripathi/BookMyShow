@@ -3,9 +3,8 @@ package main.models;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import jakarta.persistence.*;
+
 import java.util.List;
 
 @Getter

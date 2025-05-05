@@ -3,7 +3,7 @@ package main.models;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -22,7 +22,7 @@ public class Ticket extends BaseModel {
     private List<ShowSeat> showSeats;
     private Double totalAmount;
 
-    @ManyToOne
+    @Enumerated(EnumType.ORDINAL)
     private TicketStatus ticketStatus;
 
     private Date timeOfBooking;

@@ -3,7 +3,7 @@ package main.models;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
@@ -15,9 +15,11 @@ public class Movie extends BaseModel {
     @ManyToMany
     private List<Actor> actors;
 
-    @ManyToMany
+    @ElementCollection
+    @Enumerated(EnumType.ORDINAL)
     private List<Feature> movieFeatures;
 
-    @ManyToMany
+    @ElementCollection
+    @Enumerated(EnumType.ORDINAL)
     private List<Genre> genres;
 }

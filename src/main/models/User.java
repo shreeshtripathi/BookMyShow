@@ -3,7 +3,7 @@ package main.models;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
+import jakarta.persistence.*;
 
 @Getter
 @Setter

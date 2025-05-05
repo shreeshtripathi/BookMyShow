@@ -3,14 +3,12 @@ package main.models;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import jakarta.persistence.*;
 
 @Getter
 @Setter
 @Entity
-//@Table(name = "show_seat_mapping")
+@Table(name = "show_seat_mapping")
 public class ShowSeat extends BaseModel {
     @ManyToOne
     private Show show;
@@ -18,6 +16,6 @@ public class ShowSeat extends BaseModel {
     @ManyToOne
     private Seat seat;
 
-    @ManyToOne
+    @Enumerated(EnumType.ORDINAL)
     private ShowSeatState state;
 }

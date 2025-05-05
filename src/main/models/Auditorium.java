@@ -1,9 +1,9 @@
 package main.models;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -15,6 +15,10 @@ public class Auditorium extends BaseModel {
     @OneToMany
     private List<Seat> seats;
 
-    @ManyToMany
+    @OneToMany(mappedBy = "auditorium")
+    private List<Show> shows;
+
+    @ElementCollection
+    @Enumerated(EnumType.STRING)
     private List<Feature> auditoriumFeatures;
 }

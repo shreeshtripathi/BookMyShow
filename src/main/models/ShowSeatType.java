@@ -3,8 +3,7 @@ package main.models;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 @Getter
 @Setter
@@ -13,7 +12,8 @@ public class ShowSeatType extends BaseModel {
     @ManyToOne
     private Show show;
 
-    @ManyToOne
+    @Enumerated(EnumType.ORDINAL)
     private SeatType seatType;
+
     private Double price;
 }
